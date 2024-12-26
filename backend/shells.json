@@ -1,0 +1,19 @@
+{
+	"shells": [
+		{
+			"name" : "zsh",
+
+			"packages" : [
+				{
+					"pacman": "zsh"
+				},
+				{
+					"apt" : "zsh"
+				}
+			]
+		},
+		{
+			"name" : "fish"
+		}
+	]
+}

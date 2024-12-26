@@ -1,0 +1,13 @@
+{
+	"distributions": [
+		{
+			"name": "arch"
+		},
+		{
+			"name": "debian"
+		},
+		{
+			"name": "ubuntu"
+		}
+	]
+}
