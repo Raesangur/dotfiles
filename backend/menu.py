@@ -30,14 +30,18 @@ Prints the user interface and handles selection of options during the installati
 
 
 class Menu:
-    def __init__(self, title: str, options: list):
+    def __init__(self, title: str, options: list, skippable = True):
         self.options = options
+        self.skip = skippable
         
         self.display_options(title, options)
 
     def display_options(self, title: str, options: list):
         print("\n--------------------------------------------------")
         print(title.upper())
+        if self.skip:
+            print("0) Skip")
+        
         for i in range(len(options)):
             print("{0}) {1}".format(i + 1, options[i]))
 
@@ -46,11 +50,15 @@ class Menu:
         ans = True
         while ans:
             ans = int(input("Please select an option "))
+
+            if self.skip and ans == 0:
+                return "skip"
             
             if ans > len(self.options) or ans == 0:
                 print("Invalid answer, please try again")
                 ans = True
                 continue
 
+            print("")
             return self.options[ans - 1]
             

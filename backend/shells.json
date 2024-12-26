@@ -10,6 +10,13 @@
 				{
 					"apt" : "zsh"
 				}
+			],
+
+			"links": [
+				{
+					"source": ".zshrc",
+					"destination": "~/.config/.zshrc_test"
+				}
 			]
 		},
 		{

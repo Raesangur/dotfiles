@@ -39,9 +39,6 @@ class Distribution:
         distroId = distro.like() if distro.like() != "" else distro.id()
         self.distribution = self.get_distribution(supportedDistros, distroId)
          
-            
-    def get_name(self):
-        return distro.codename() if distro.codename() != "n/a" else distro.id()
 
     def get_distribution(self, supportedDistros: list, distroId: str):
         distribution = None
@@ -58,3 +55,19 @@ class Distribution:
             return self.get_distribution(supportedDistros, distroSelected)
         else:
             return distribution
+
+    
+    def get_name(self):
+        return self.distribution["name"]
+
+    def get_package_manager(self):
+        return self.distribution["package manager"]
+
+    def get_install_flag(self):
+        return self.distribution.get("install flag", "")
+
+    def get_quiet_flag(self):
+        return self.distribution.get("quiet flag", "")
+
+    def get_extra_flags(self):
+        return self.distribution.get("extra flags", [])

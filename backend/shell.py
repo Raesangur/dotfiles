@@ -38,11 +38,17 @@ class Shells:
     def get_available(self):
         return [shell.name for shell in self.shells]
 
-
+    def get_selected(self, selected: str):
+        for shell in self.shells:
+            if shell.name == selected:
+                return shell
+        return None
+        
 class Shell:
     def __init__(self, data):
         self.data = data
-        self.name = self.data.get("name", "")
-
-        self.path = self.data.get("path", self.name)
+        
+        self.name     = self.data.get("name",     "")
+        self.path     = self.data.get("path",     self.name)
         self.packages = self.data.get("packages", None)
+        self.links    = self.data.get("links",    None)

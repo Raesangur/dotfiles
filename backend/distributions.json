@@ -1,13 +1,23 @@
 {
 	"distributions": [
 		{
-			"name": "arch"
+			"name": "arch",
+			"package manager": "pacman",
+			"install flag": "-S",
+			"quiet flag": "--quiet",
+			"extra flags": ["--color", "auto"]
 		},
 		{
-			"name": "debian"
+			"name": "debian",
+			"package manager": "apt",
+			"install flag" : "install",
+			"quiet flag" : "-qq"
 		},
 		{
-			"name": "ubuntu"
+			"name": "ubuntu",
+			"package manager": "apt",
+			"install flag" : "install",
+			"quiet flag" : "-qq"
 		}
 	]
 }

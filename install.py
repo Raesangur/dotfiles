@@ -27,26 +27,47 @@ Installer script to setup a new Linux install
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ---------------------------------------------------------------------------------------------------
 """
+
+from backend.installer import Installer
+from backend.menu import Menu
+
+from backend.distribution import Distribution
+from backend.shell import Shells
+
 import argparse
 args = None
 
-from backend.shell import Shells
-from backend.menu import Menu
-from backend.distribution import Distribution
+
+
 
 def main():
+    distro = handle_distribution()
+    installer = Installer(distro)
+    
+    handle_shell(installer)
+
+def handle_distribution():
     distro = Distribution()
     if args.verbose:
         print("{} Linux detected".format(distro.get_name().title()))
-    print(distro.distribution)
-    exit()
-    handle_shell()
+    return distro
 
-def handle_shell():
+def handle_shell(installer: Installer):
     shells = Shells()
-    shellMenu = Menu("Shell Selection", shells.get_available())
+
+    # Ask for a shell selection
+    shellMenu = Menu("Shell Selection", shells.get_available(), skippable=True)
     shell = shellMenu.answer()
-    print(shell)
+    if shell == "skip":
+        return
+    shell = shells.get_selected(shell)
+
+    # Install specified shell
+    installer.install(shell, quiet=args.quiet)
+
+    # Create symbolic links to configuraition
+    installer.create_links(shell, verbose=args.verbose)
+    
 
 # -----------------------------------------------    
 def parse_arguments():
@@ -63,3 +84,4 @@ def parse_arguments():
 if __name__ == "__main__":
     parse_arguments();
     main()
+

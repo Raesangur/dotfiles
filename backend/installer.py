@@ -25,3 +25,39 @@ Installer utilities to install packages on various distros
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ---------------------------------------------------------------------------------------------------
 """
+import os
+import subprocess
+
+from backend.distribution import Distribution
+
+class Installer:
+    def __init__(self, distro: Distribution):
+        self.distro = distro
+
+    def install(self, package, quiet=False):
+        packageName = package.name
+        if package.packages is not None:
+            for pack in package.packages:
+                if self.distro.get_package_manager() in pack:
+                    packageName = pack[self.distro.get_package_manager()]
+
+        subprocess.run(["sudo",
+                        self.distro.get_package_manager(),
+                        self.distro.get_install_flag(),
+                        packageName,
+                        *([self.distro.get_quiet_flag()] if quiet else []),
+                        *(self.distro.get_extra_flags())
+                        ])
+
+    def create_links(self, package, verbose=False):
+        if package.links is not None:
+            for link in package.links:
+                sourcePath = os.path.dirname(os.path.dirname(__file__)) + '/' + package.path + '/' +  link["source"]
+                destinationPath = os.path.abspath(os.path.expanduser(os.path.expandvars(link["destination"])))
+                print(sourcePath)
+                print(destinationPath)
+                if verbose:
+                    print("Creating symbolic link from {} to {}".format(destinationPath, sourcePath))
+
+                subprocess.run(["ln", "-s", sourcePath, destinationPath])
+        pass
