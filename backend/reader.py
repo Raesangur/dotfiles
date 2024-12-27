@@ -31,13 +31,13 @@ import os
 
 def jsonReader(path: str):
     # Open file
-    absolutePath = os.path.dirname(__file__) + '/' + path
+    absolutePath = os.path.dirname(__file__) + "/../config/" + path
     jsonFile = open(absolutePath, 'r')
 
     # Read content
     jsonContent = json.load(jsonFile)
 
-    # Close file
+    # Close files
     jsonFile.close()
 
     return jsonContent

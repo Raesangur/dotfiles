@@ -5,6 +5,7 @@
 			"package manager": "pacman",
 			"install flag": "-S",
 			"quiet flag": "--quiet",
+			"confirm flag": "--noconfirm",
 			"extra flags": ["--color", "auto"]
 		},
 		{

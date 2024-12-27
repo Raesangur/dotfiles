@@ -28,8 +28,19 @@ Prints the user interface and handles selection of options during the installati
 ---------------------------------------------------------------------------------------------------
 """
 
+class BoolMenu():
+    def __init__(self, title: str):
+        self.realMenu = SelectionMenu(title, ["true", "false"], skippable = False)
 
-class Menu:
+    def answer(self):
+        ans = self.realMenu.answer()
+        if ans == "true":
+            return True
+        else:
+            return False
+        
+
+class SelectionMenu():
     def __init__(self, title: str, options: list, skippable = True):
         self.options = options
         self.skip = skippable

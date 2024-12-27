@@ -1,0 +1,18 @@
+{
+	"packages" : [
+		{
+			"name" : "wget",
+			"required" : "true"
+		},
+		{
+			"name": "fastfetch",
+			"required" : "false",
+			"links": [
+				{
+					"source": "config.jsonc",
+					"destination": "~/.config/fastfetch/config.jsonc"
+				}
+			]
+		}
+	]
+}

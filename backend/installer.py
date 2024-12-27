@@ -34,7 +34,7 @@ class Installer:
     def __init__(self, distro: Distribution):
         self.distro = distro
 
-    def install(self, package, quiet=False):
+    def install(self, package, quiet=False, noconfirm=False):
         packageName = package.name
         if package.packages is not None:
             for pack in package.packages:
@@ -46,6 +46,7 @@ class Installer:
                         self.distro.get_install_flag(),
                         packageName,
                         *([self.distro.get_quiet_flag()] if quiet else []),
+                        *([self.distro.get_confirm_flag()] if noconfirm else []),
                         *(self.distro.get_extra_flags())
                         ])
 

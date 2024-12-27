@@ -29,21 +29,22 @@ Installer script to setup a new Linux install
 """
 
 from backend.installer import Installer
-from backend.menu import Menu
+from backend.menu import SelectionMenu, BoolMenu
 
 from backend.distribution import Distribution
 from backend.shell import Shells
+from backend.packages import Packages
 
 import argparse
 args = None
 
 
 
-
 def main():
     distro = handle_distribution()
     installer = Installer(distro)
-    
+
+    handle_packages(installer)
     handle_shell(installer)
 
 def handle_distribution():
@@ -52,11 +53,28 @@ def handle_distribution():
         print("{} Linux detected".format(distro.get_name().title()))
     return distro
 
+def handle_packages(installer: Installer):
+    packages = Packages()
+
+    for pkg in packages.packages:
+        shouldInstall = False
+        if pkg.required:
+            shouldInstall = True
+        else:
+            confirmMenu = BoolMenu("Install package {}?".format(pkg.name))
+            if confirmMenu.answer() == True:
+                shouldInstall = True
+
+        if shouldInstall:
+            installer.install(pkg, quiet=True, noconfirm=True)
+            installer.create_links(pkg, verbose=args.verbose)      
+            
+
 def handle_shell(installer: Installer):
     shells = Shells()
 
     # Ask for a shell selection
-    shellMenu = Menu("Shell Selection", shells.get_available(), skippable=True)
+    shellMenu = SelectionMenu("Shell Selection", shells.get_available(), skippable=True)
     shell = shellMenu.answer()
     if shell == "skip":
         return

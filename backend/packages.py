@@ -1,7 +1,7 @@
 # #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Distribution-related utilities
+Handles the installation and setup of various packages
 ---------------------------------------------------------------------------------------------------
 :author  Pascal-Emmanuel Lachance | Raesangur <https://www.github.com/Raesangur>
          https://www.raesangur.com
@@ -27,51 +27,21 @@ Distribution-related utilities
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ---------------------------------------------------------------------------------------------------
 """
-import distro
-
 from backend.reader import jsonReader
-from backend.menu import SelectionMenu
 
-class Distribution:
+class Packages:
     def __init__(self):
-        supportedDistros = jsonReader("distributions.json")["distributions"]
+        self.data = jsonReader("packages.json")["packages"]
+        self.packages = [Package(pkg) for pkg in self.data]
 
-        distroId = distro.like() if distro.like() != "" else distro.id()
-        self.distribution = self.get_distribution(supportedDistros, distroId)
-         
 
-    def get_distribution(self, supportedDistros: list, distroId: str):
-        distribution = None
-        for dist in supportedDistros:
-            if dist.get("name", "") == distroId:
-                distribution = dist
-                break
+class Package:
+    def __init__(self, data):
+        self.data = data
 
-        if distribution == None:
-            print("Current distribution is not supported")
-            print("Please select one from the list:")
-            distroMenu = SelectionMenu("Distribution Selection",
-                                       [dist.get("name", "") for dist in supportedDistros])
-            distroSelected = distroMenu.answer()
-            return self.get_distribution(supportedDistros, distroSelected)
-        else:
-            return distribution
+        self.name     = self.data["name"]
+        self.path     = self.data.get("path",     self.name)
+        self.required = self.data.get("required", "false").lower() == "true"
 
-    
-    def get_name(self):
-        return self.distribution["name"]
-
-    def get_package_manager(self):
-        return self.distribution["package manager"]
-
-    def get_install_flag(self):
-        return self.distribution.get("install flag", "")
-
-    def get_quiet_flag(self):
-        return self.distribution.get("quiet flag", "")
-
-    def get_confirm_flag(self):
-        return self.distribution.get("confirm flag", "")
-
-    def get_extra_flags(self):
-        return self.distribution.get("extra flags", [])
+        self.packages = self.data.get("packages", None)
+        self.links    = self.data.get("links", None)

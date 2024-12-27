@@ -65,7 +65,7 @@ pathadd() {
 }
 
 # Display welcome message on shell startup
-#~/scripts/welcome.sh
-fastfetch
+~/dotfiles/zsh/welcome.sh
+# fastfetch
 #source ~/dotfiles/zsh/welcome
 #source ~/dotfiles/zsh/updates
