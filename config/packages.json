@@ -5,6 +5,10 @@
 			"required" : "true"
 		},
 		{
+			"name" : "git",
+			"required" : "true"
+		},
+		{
 			"name": "fastfetch",
 			"required" : "false",
 			"links": [

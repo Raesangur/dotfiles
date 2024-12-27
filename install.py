@@ -85,6 +85,9 @@ def handle_shell(installer: Installer):
 
     # Create symbolic links to configuraition
     installer.create_links(shell, verbose=args.verbose)
+
+    # Run additionnal commands if needed
+    installer.run_additionnal_commands(shell, verbose=args.verbose)
     
 
 # -----------------------------------------------    

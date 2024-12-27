@@ -61,4 +61,13 @@ class Installer:
                     print("Creating symbolic link from {} to {}".format(destinationPath, sourcePath))
 
                 subprocess.run(["ln", "-s", sourcePath, destinationPath])
-        pass
+
+    def run_additionnal_commands(self, package, verbose=False):
+        if package.commands is not None:
+            for command in package.commands:
+                cmd = command["command"]
+                if verbose:
+                    print(cmd)
+                subprocess.run(cmd, shell=True)
+
+    

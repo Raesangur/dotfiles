@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Clear screen
 clear
 
@@ -17,21 +14,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # zsh plugins
 plugins=(
-# plugins softwares
-docker
-git
-mvn
-node
-npm
-python
-
-
-# plugins tools
-emoji
-web-search
-
-# plugins misc
-sudo
+	zsh-syntax-highlighting
 )
 
 # Apply zsh config
@@ -66,6 +49,4 @@ pathadd() {
 
 # Display welcome message on shell startup
 ~/dotfiles/zsh/welcome.sh
-# fastfetch
-#source ~/dotfiles/zsh/welcome
 #source ~/dotfiles/zsh/updates

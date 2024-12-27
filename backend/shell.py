@@ -52,3 +52,4 @@ class Shell:
         self.path     = self.data.get("path",     self.name)
         self.packages = self.data.get("packages", None)
         self.links    = self.data.get("links",    None)
+        self.commands = self.data.get("commands", None)
