@@ -1,0 +1,27 @@
+configuration {
+	modi: "window,drun,run,ssh";
+	combi-modi: "drun,run,ssh";
+	drun-match-fields: "name,generic,exec,categories";
+	lines: 10;
+	columns: 2;
+	font: "NotoSansMono-Bold 12";
+	show-icons: true;
+	bw: 1;
+	terminal: "alacritty";
+	click-to-exit: true;
+	
+	levenshtein-sort: true;
+	case-sensitive: false;
+	sidebar-mode: false;
+	matching: "fuzzy";
+
+/*	color-normal: "#510231, #FEE8DA, #510231, #FF974E, #510231";
+  	color-urgent: "#510231, #FA6E43, #510231, #FA6E43, #FEE8DA";
+  	color-active: "#510231, #FEE8DA, #510231, #FF974E, #510231";
+  	color-window: "#510231, #510231, #FF974E";
+*/
+
+combi-hide-mode-prefix: true;
+
+}
+@theme "~/.config/rofi/themes/theme.rasi"

@@ -88,7 +88,7 @@ def handle_shell(installer: Installer):
 
     # Run additionnal commands if needed
     installer.run_additionnal_commands(shell, verbose=args.verbose)
-    
+
 
 # -----------------------------------------------    
 def parse_arguments():

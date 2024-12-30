@@ -5,7 +5,13 @@ fi
 if command -v brew &> /dev/null ; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
-alias bat=batcat
+alias bat='bat --color=always'
+
+# Displaying files
+if command -v eza &> /dev/null ; then
+	alias ls='eza --icons --color=always --group-directories-first'
+	alias la='eza --icons --color=always --group-directories-first --long --all --all --header --no-user'
+fi
 
 # Setup utilities
 alias my_ip="neofetch public_ip; neofetch local_ip"

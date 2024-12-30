@@ -1,0 +1,214 @@
+/* vim:ft=css */
+/************************************************
+ * ROFI Color theme
+ * User: leofa
+ * Copyright: 2017 leofa
+ ***********************************************/
+
+* {
+	background:       #1E2127FF;
+    background-alt:   #071013FF;
+    foreground:       #FFFFFFFF;
+    selected:         #61AFEFFF;
+    active:           #98C379FF;
+    urgent:           #E06C75FF;
+    separatorcolor:   #293133FF;
+    red:              #aa0000FF;
+    
+    background-color: @background;
+    text-color:       @foreground;
+    spacing:          2;
+}
+
+#window {
+    transparency:     "real";
+    location:         center;
+    anchor:           center;
+    fullscreen:       false;
+    background-color: @separatorcolor;
+    border:           1;
+    border-radius:    10;
+    padding:          5;
+}
+
+prompt {
+    enabled:                     true;
+    padding:                     10px;
+    border-radius:               10px;
+    border-color:                @red;
+    background-color:            @background-alt;
+    text-color:                  @background;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    padding:                     10px 13px;
+    border-radius:               10px;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+entry {
+	text-color: @foreground;
+	placeholder: "Search programs";
+	vertical-align: 0.45;
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     0px;
+    border:                      3px;
+    border-radius:               10px;
+    border-color:                @red;
+    background-color:            @background;
+    text-color:                  @foreground;
+    children:                    [ "textbox-prompt-colon", "prompt", "entry"];
+}
+
+
+mainbox {
+    enabled:                     true;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     30px;
+    background-color:            @background;
+    border-radius:               12px;
+    children:                    [ "inputbar", "message", "listview" ];
+}
+
+/*****----- Message -----*****/
+message {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               12px;
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+textbox {
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+
+#listview {
+	enabled:      true;
+	columns:      2;
+	lines:        10;
+    fixed-height: 0;
+    dynamic:      true;
+    border:       0px 0px 0px ;
+    border-color: @separatorcolor;
+    text-color:   @foreground;
+    spacing:      10px;
+    scrollbar:    true;
+    padding:      2px 0px 0px ;
+    background-color: transparent;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    padding:                     10px 10px;
+    border:                      0px solid;
+    border-radius:               12px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+    spacing: 10px;
+}
+element-text {
+    font:                        "NotoSansMono-Bold 14";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    margin-left:                 10px;
+}
+element-icon {
+	background-color: transparent;
+    size:             30px;
+} 
+
+#element.normal.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+#element.normal.urgent {
+    background-color: @background;
+    text-color:       @urgent;
+}
+#element.normal.active {
+    background-color: @background-alt;
+    text-color:       @active;
+}
+#element.selected.normal {
+    background-color: @background-alt;
+    border-radius:    10px;
+    text-color:       @selected;
+}
+#element.selected.urgent {
+    background-color: @background-alt;
+    text-color:       @selected;
+}
+#element.selected.active {
+    background-color: @background-alt;
+    text-color:       @selected;
+}
+
+#scrollbar {
+	enabled:      false;
+    width:        4px;
+    border:       0;
+    handle-color: @foreground;
+    handle-width: 8px ;
+    padding:      0;
+}
+#sidebar {
+    border:       0px 0px 0px;
+    padding:      5px 0 0;
+    border-color: @separatorcolor;
+}
+#button {
+    spacing:    0;
+    text-color: @foreground;
+}
+#button.selected {
+    background-color: @background-alt;
+    text-color:       @selected;
+}
+#inputbar {
+    spacing:    0;
+    text-color: @foreground;
+    padding:    1px ;
+}
+#case-indicator {
+    spacing:    0;
+    text-color: @foreground;
+}
+#entry {
+    spacing:    0;
+    text-color: @foreground;
+}
+#prompt {
+    spacing:    0;
+    text-color: @foreground;
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @foreground;
+}
+
+
+

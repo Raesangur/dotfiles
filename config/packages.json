@@ -9,6 +9,15 @@
 			"required" : "true"
 		},
 		{
+			"name": "eza",
+			"required": "true",
+		}
+		{
+			"name": "ttf-arimo-nerd",
+			"required": "true",
+			"description": "Font for eza icons"
+		}
+		{
 			"name": "fastfetch",
 			"required" : "false",
 			"links": [
