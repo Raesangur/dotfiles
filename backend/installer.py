@@ -70,4 +70,10 @@ class Installer:
                     print(cmd)
                 subprocess.run(cmd, shell=True)
 
-    
+    def run_command(self, command: str, verbose=False, quiet=False):
+        if verbose:
+            print("Running command `{}`".format(command))
+        if quiet:    
+            subprocess.run(command, shell=True, stdout = subprocess.DEVNULL)
+        else:
+            subprocess.run(command, shell=True)

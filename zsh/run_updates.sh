@@ -13,6 +13,10 @@ if command -v pacman &> /dev/null ; then
 	sudo pacman -Syu
 fi
 
+if command -v yay &> /dev/null ; then
+	yay -Syu
+fi
+
 # other updates
 if command -v snap &> /dev/null ; then
     sudo snap refresh

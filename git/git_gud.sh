@@ -25,4 +25,4 @@ git commit -S -m "$commitMessage"
 # Push to server
 git push
 
-read
+#read
