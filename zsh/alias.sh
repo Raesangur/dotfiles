@@ -15,7 +15,7 @@ fi
 
 # Removing files
 alias rm='echo "rm is disabled on this system, use remove or trash or /bin/rm instead."'
-alias remove='/bin/rm -irv'
+alias remove='trash -ir'
 
 # Setup utilities
 alias my_ip="neofetch public_ip; neofetch local_ip"

@@ -55,6 +55,11 @@ pathadd() {
     fi
 }
 
+# Start hyprland on startup
+if uwsm check may-start && uwsm select; then
+	exec systemd-cat -t uwsm_start uwsm start default
+fi
+
 # Display welcome message on shell startup
 ~/dotfiles/zsh/welcome.sh
 #source ~/dotfiles/zsh/updates

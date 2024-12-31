@@ -11,12 +11,12 @@
 		{
 			"name": "eza",
 			"required": "true",
-		}
+		},
 		{
 			"name": "ttf-arimo-nerd",
 			"required": "true",
 			"description": "Font for eza icons"
-		}
+		},
 		{
 			"name": "fastfetch",
 			"required" : "false",
@@ -26,6 +26,10 @@
 					"destination": "~/.config/fastfetch/config.jsonc"
 				}
 			]
+		},
+		{
+		    "name": "thefuck",
+		    "required": "false"
 		}
 	]
 }
