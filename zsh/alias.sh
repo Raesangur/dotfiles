@@ -13,6 +13,10 @@ if command -v eza &> /dev/null ; then
 	alias la='eza --icons --color=always --group-directories-first --long --all --all --header --no-user'
 fi
 
+# Removing files
+alias rm='echo "rm is disabled on this system, use remove or trash or /bin/rm instead."'
+alias remove='/bin/rm -irv'
+
 # Setup utilities
 alias my_ip="neofetch public_ip; neofetch local_ip"
 alias restart="sudo reboot"
