@@ -103,7 +103,7 @@
     },
     {
         "type": "localip",
-        "key": " ┌IP ",
+        "key": " ┌IP",
         "keyColor": "red",
         "showMac": true
     },

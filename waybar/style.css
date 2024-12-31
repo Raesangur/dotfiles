@@ -57,13 +57,13 @@ button:hover {
 #power-profiles-daemon,
 #custom-power,
 #mpd {
-    padding: 3px 10px;
+    padding: 5px 10px;
     color: #ffffff;
     border-radius: 20px;
-    margin-left: 2px;
-    margin-right: 2px;
-    margin-bottom: 5px;
-    margin-top: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 1px;
+    margin-top: 3px;
     
 }
 
