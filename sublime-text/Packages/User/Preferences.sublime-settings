@@ -1,6 +1,6 @@
 {
 	"draw_white_space": "all",
-	"font_size": 14,
+	"font_size": 10,
 	"theme": "Default Dark.sublime-theme",
 	"color_scheme": "Packages/Color Scheme - Default/Raesangur.sublime-color-scheme",
 	"ignored_packages":

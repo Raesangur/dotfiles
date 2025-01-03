@@ -10,7 +10,7 @@
 		},
 		{
 			"name": "eza",
-			"required": "true",
+			"required": "true"
 		},
 		{
 			"name": "ttf-arimo-nerd",

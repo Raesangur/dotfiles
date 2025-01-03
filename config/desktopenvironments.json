@@ -1,0 +1,17 @@
+{
+	"desktopenvironment": [
+		{
+			"name" : "hyprland",
+			"links": [
+				{
+					"source": "hypr",
+					"destination": "~/.config/hypr"
+				}
+			],
+			"commands": [
+				{"command": "hyprpm add https://github.com/zakk4223/hyprWorkspaceLayouts.git"},
+				{"command": "hyprpm enable hyprWorkspaceLayouts"}
+			]
+		}
+	]
+}

@@ -32,8 +32,10 @@ from backend.installer import Installer
 from backend.menu import SelectionMenu, BoolMenu
 
 from backend.distribution import Distribution
-from backend.shell import Shells
 from backend.packages import Packages
+
+from backend.shell import Shells
+from backend.desktopenvironment import DesktopEnvironments
 
 import argparse
 import os
@@ -45,10 +47,12 @@ def main():
     distro = handle_distribution()
     installer = Installer(distro)
 
-    #handle_packages(installer)
-    #handle_shell(installer)
-    #ssh_installed = handle_ssh(installer)
+    handle_packages(installer)
+    ssh_installed = handle_ssh(installer)
     handle_git(installer, True)
+    
+    handle_shell(installer)
+    handle_desktop_environment(installer)
     
 
 def handle_distribution():
@@ -93,6 +97,25 @@ def handle_shell(installer: Installer):
 
     # Run additionnal commands if needed
     installer.run_additionnal_commands(shell, verbose=args.verbose)
+
+def handle_desktop_environment(installer: Installer):
+    desktopEnvironments = DesktopEnvironments()
+
+    # Ask for a shell selection
+    desktopEnvironmentMenu = SelectionMenu("Desktop Environment / Window Manager Selection", desktopEnvironents.get_available(), skippable=True)
+    desktopEnvironment = desktopEnvironmentMenu.answer()
+    if desktopEnvironment == "skip":
+        return
+    desktopEnvironment = desktopEnvironments.get_selected(desktopEnvironment)
+
+    # Install specified shell
+    installer.install(desktopEnvironment, quiet=args.quiet)
+
+    # Create symbolic links to configuraition
+    installer.create_links(desktopEnvironment, verbose=args.verbose)
+
+    # Run additionnal commands if needed
+    installer.run_additionnal_commands(desktopEnvironment, verbose=args.verbose)
 
 
 def handle_ssh(installer: Installer):
