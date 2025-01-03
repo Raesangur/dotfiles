@@ -97,7 +97,8 @@
         		"months": "",
         		"today": "<span color='#aa0000'><b>{}</b></span>"
         	}
-        }
+        },
+        "on-click": "proton-mail"
     },
     
     "bluetooth": {

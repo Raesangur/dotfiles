@@ -1,16 +1,10 @@
 #!/bin/bash
 
-# Run ssh-agent and add key if it isn't already running
-ssh_pid=$(pidof ssh-agent)
-
-if [ "$ssh_pid" = "" ]; then
-    eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/ed25519
-else
-    SSH_AGENT_PID=$(ssh_pid) ssh-agent -k
-    eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/ed25519
-fi
+# Run ssh-agent and add key. Kill ssh agent if it was previously running
+# (I'm sure killing the agent is never going to bite me in the ass in the future...)
+SSH_AGENT_PID=$(pidof ssh-agent) ssh-agent -k
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/ed25519
 
 # Add all files
 git add -A
