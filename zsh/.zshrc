@@ -44,8 +44,8 @@ setopt EXTENDED_HISTORY
 source ~/dotfiles/zsh/alias.sh
 
 # Setup ctrl+backspace & ctrl+delete to work in terminal
-#bindkey '^H' backward-kill-word
-#bindkey '5~' kill-word
+bindkey '^H' backward-kill-word
+bindkey '5~' kill-word
 
 # Adding function pathadd to add a folder to path if it doesn't already exists
 # https://superuser.com/a/39995
@@ -56,7 +56,7 @@ pathadd() {
 }
 
 # Start hyprland on startup
-if uwsm check may-start && uwsm select; then
+if uwsm check may-start; then
 	exec systemd-cat -t uwsm_start uwsm start default
 fi
 
