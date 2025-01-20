@@ -10,11 +10,11 @@ if command -v apt-get &> /dev/null ; then
 fi
 
 if command -v pacman &> /dev/null ; then
-	sudo pacman -Syu
+	sudo pacman -Syyu
 fi
 
 if command -v yay &> /dev/null ; then
-	yay -Syu
+	yay -Syyu
 fi
 
 # other updates
