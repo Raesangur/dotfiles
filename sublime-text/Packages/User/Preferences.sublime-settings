@@ -5,7 +5,6 @@
 	"color_scheme": "Packages/Color Scheme - Default/Raesangur.sublime-color-scheme",
 	"ignored_packages":
 	[
-		"Package Control",
 		"Vintage",
 	],
 	"translate_tabs_to_spaces": true,

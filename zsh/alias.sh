@@ -26,10 +26,10 @@ alias did_i_fucking_stutter='sudo $(fc -ln -1)'
 alias show=tycat
 
 # Setup small programs
-alias bon_matin="source ~/.zshrc"
 alias git_gud="~/dotfiles/git/git_gud.sh"
 alias git_clone="~/dotfiles/git/git_clone.sh"
+alias git_pull="~/dotfiles/git/git_pull.sh"
+
+alias bon_matin="source ~/.zshrc"
 alias update="~/dotfiles/zsh/run_updates.sh"
 
-# .net
-export DOTNET_ROOT=/snap/dotnet-sdk/current
