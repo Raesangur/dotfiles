@@ -5,7 +5,7 @@
 			"links": [
 				{
 					"source": ".zshrc",
-					"destination": "~/.config/.zshrc_test"
+					"destination": "~/.zshrc"
 				}
 			],
 			"commands": [

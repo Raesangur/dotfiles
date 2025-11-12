@@ -29,7 +29,10 @@ alias show=tycat
 alias git_gud="~/dotfiles/git/git_gud.sh"
 alias git_clone="~/dotfiles/git/git_clone.sh"
 alias git_pull="~/dotfiles/git/git_pull.sh"
+alias gek_tu="~/dotfiles/git/gek_tu.sh"
 
 alias bon_matin="source ~/.zshrc"
 alias update="~/dotfiles/zsh/run_updates.sh"
 
+
+alias fix_gtk="xhost +si:localuser:root"

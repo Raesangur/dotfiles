@@ -102,7 +102,7 @@ def handle_desktop_environment(installer: Installer):
     desktopEnvironments = DesktopEnvironments()
 
     # Ask for a shell selection
-    desktopEnvironmentMenu = SelectionMenu("Desktop Environment / Window Manager Selection", desktopEnvironents.get_available(), skippable=True)
+    desktopEnvironmentMenu = SelectionMenu("Desktop Environment / Window Manager Selection", desktopEnvironments.get_available(), skippable=True)
     desktopEnvironment = desktopEnvironmentMenu.answer()
     if desktopEnvironment == "skip":
         return

@@ -1,6 +1,6 @@
 {
 	"draw_white_space": "all",
-	"font_size": 10,
+	"font_size": 15,
 	"theme": "Default Dark.sublime-theme",
 	"color_scheme": "Packages/Color Scheme - Default/Raesangur.sublime-color-scheme",
 	"ignored_packages":
@@ -16,8 +16,23 @@
 		".DS_Store", ".directory", "desktop.ini",
 		"*.class", "*.psd", "*.db",
 		"*.sublime-workspace",
-		"*.pdf", "*.aux", "*.auxlock", "*.fmt", "*.log", "*.out", "*.lol", "*.lof", "*.lot", "*.synctex*", "*.gz", "*.tdo", "*.toc",
+		"*.aux", "*.auxlock", "*.fmt", "*.bcf", "*.nav", "*.run.xml", "*.snm", "*.out", "*.lol", "*.lof", "*.lot", "*.synctex*", "*.gz", "*.tdo", "*.toc",
 		"*.xlsx", "*.xlsm"
 	],
 	"index_files": false,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "<",
+			"selector": "text.html, text.xml",
+		},
+		{
+			"rhs_empty": true,
+			"selector": "punctuation.accessor",
+		},
+		{
+			"characters": "\\",
+			"selector": "text.tex.latex",
+		}
+	],
 }

@@ -5,6 +5,10 @@
 			"required" : "true"
 		},
 		{
+            "name" : "curl",
+            "required" : "true"
+        },
+		{
 			"name" : "git",
 			"required" : "true"
 		},

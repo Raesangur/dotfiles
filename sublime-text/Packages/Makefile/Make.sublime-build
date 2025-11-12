@@ -1,0 +1,32 @@
+{
+    "shell_cmd": "make",
+    "file_regex": "^(..[^:\n]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "working_dir": "${folder:${project_path:${file_path}}}",
+    "selector": "source.makefile",
+    "syntax": "Packages/Makefile/Make Output.sublime-syntax",
+    "keyfiles": ["Makefile", "makefile"],
+
+    "variants":
+    [
+        {
+            "name": "Build",
+            "shell_cmd": "make build"
+        },
+        {
+            "name": "Rebuild",
+            "shell_cmd": "make rebuild"
+        },
+        {
+            "name": "Format",
+            "shell_cmd": "make format"
+        },
+        {
+            "name": "Clean",
+            "shell_cmd": "make clean"
+        },
+        {
+            "name": "Simple",
+            "shell_cmd": "make simple"
+        }
+    ]
+}
