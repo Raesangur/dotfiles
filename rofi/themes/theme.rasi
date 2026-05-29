@@ -6,13 +6,13 @@
  ***********************************************/
 
 * {
-	background:       #1E2127FF;
-    background-alt:   #071013FF;
+	background:       #1E2127A0;
+    background-alt:   #071013E0;
     foreground:       #FFFFFFFF;
     selected:         #61AFEFFF;
     active:           #98C379FF;
     urgent:           #E06C75FF;
-    separatorcolor:   #293133FF;
+    separatorcolor:   #293133E0;
     red:              #aa0000FF;
     
     background-color: @background;
@@ -27,7 +27,7 @@
     fullscreen:       false;
     background-color: @separatorcolor;
     border:           1;
-    border-radius:    10;
+    border-radius:    15;
     padding:          5;
 }
 
@@ -150,8 +150,10 @@ element-icon {
 }
 #element.selected.normal {
     background-color: @background-alt;
-    border-radius:    10px;
     text-color:       @selected;
+    border:           1px solid;
+    border-radius:    10px;
+    border-color:     @red;
 }
 #element.selected.urgent {
     background-color: @background-alt;
@@ -209,6 +211,4 @@ element-icon {
     margin:     0px 0.3em 0em 0em ;
     text-color: @foreground;
 }
-
-
 

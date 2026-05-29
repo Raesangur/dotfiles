@@ -32,6 +32,8 @@ PATH=${PATH}:~/.local/bin:~/scripts
 PATH=${PATH}:~/.cargo/bin
 export PATH
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/mnt/f/llama/lib
+
 
 # Make history longer
 export HISTFILE="$HOME/.zsh_history"
@@ -42,6 +44,9 @@ setopt EXTENDED_HISTORY
 
 # Set Software Aliases
 source ~/dotfiles/zsh/alias.sh
+
+# Setup NVM (Node Version Management)
+source /usr/share/nvm/init-nvm.sh
 
 # Setup ctrl+backspace & ctrl+delete to work in terminal
 bindkey '^H' backward-kill-word

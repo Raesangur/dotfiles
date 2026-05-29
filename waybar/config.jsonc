@@ -15,6 +15,7 @@
     ],
     "modules-right": [
         "mpd",
+        "custom/kdeconnect",
         //"idle_inhibitor",
         "bluetooth",
         "pulseaudio",
@@ -82,6 +83,12 @@
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "custom/kdeconnect": {
+      "exec": "$HOME/.config/waybar/custom-kdeconnect.sh battery",
+      "format": " {}",
+      "interval": 60,
+      "on-click": "$HOME/.config/waybar/custom-kdeconnect.sh ring"
     },
     "tray": {
         // "icon-size": 21,

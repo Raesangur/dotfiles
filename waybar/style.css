@@ -46,6 +46,7 @@ button:hover {
 #disk,
 #temperature,
 #backlight,
+#custom-kdeconnect,
 #network,
 #pulseaudio,
 #wireplumber,
@@ -173,6 +174,14 @@ label:focus {
     color: #2a5c45;
 }
 
+
+#custom-kdeconnect {
+    background-color: #018093;
+    color: #ffffff;
+}
+#custom-kdeconnect:hover {
+    background-color: #4cacd4;
+}
 
 #network {
     background-color: #aeaeae;
