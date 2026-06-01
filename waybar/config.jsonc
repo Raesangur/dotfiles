@@ -29,6 +29,7 @@
         // "sway/language",
         // "battery",
         // "battery#bat2",
+        "custom/weather",
         "clock",
         "tray",
         "custom/power"
@@ -167,6 +168,14 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/weather/get_weather.rb",
+        "on-click": "$HOME/.config/waybar/scripts/weather/get_weather.rb --next", // Cycle views
+        "interval": 900 // Every 15 minutes
     },
     "custom/power": {
         "format" : "⏻ ",

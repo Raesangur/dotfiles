@@ -47,6 +47,7 @@ button:hover {
 #temperature,
 #backlight,
 #custom-kdeconnect,
+#custom-weather,
 #network,
 #pulseaudio,
 #wireplumber,
@@ -181,6 +182,14 @@ label:focus {
 }
 #custom-kdeconnect:hover {
     background-color: #4cacd4;
+}
+
+#custom-weather {
+    background-color: #1c6b2b;
+}
+#custom-weather:hover {
+    background-color: #7ae683;
+    color: #000000;
 }
 
 #network {
