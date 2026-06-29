@@ -1,0 +1,9 @@
+micro/backups/*
+micro/buffers/*
+
+__pycache__/*
+
+sublime-text/Installed\ Packages/*
+sublime-text/Lib/*
+sublime-text/Local/*
+sublime-text/Log/*

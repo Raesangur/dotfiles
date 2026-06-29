@@ -1,0 +1,12 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"LaTeXTools",
+		"Package Control",
+		"PackageResourceViewer",
+	],
+	"in_process_packages":
+	[
+	],
+}

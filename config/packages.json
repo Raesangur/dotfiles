@@ -1,0 +1,39 @@
+{
+	"packages" : [
+		{
+			"name" : "wget",
+			"required" : "true"
+		},
+		{
+            "name" : "curl",
+            "required" : "true"
+        },
+		{
+			"name" : "git",
+			"required" : "true"
+		},
+		{
+			"name": "eza",
+			"required": "true"
+		},
+		{
+			"name": "ttf-arimo-nerd",
+			"required": "true",
+			"description": "Font for eza icons"
+		},
+		{
+			"name": "fastfetch",
+			"required" : "false",
+			"links": [
+				{
+					"source": "config.jsonc",
+					"destination": "~/.config/fastfetch/config.jsonc"
+				}
+			]
+		},
+		{
+		    "name": "thefuck",
+		    "required": "false"
+		}
+	]
+}

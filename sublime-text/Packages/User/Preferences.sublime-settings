@@ -1,0 +1,38 @@
+{
+	"draw_white_space": "all",
+	"font_size": 9,
+	"theme": "Default Dark.sublime-theme",
+	"color_scheme": "Packages/Color Scheme - Default/Raesangur.sublime-color-scheme",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"translate_tabs_to_spaces": true,
+	"file_exclude_patterns":
+	[
+		"*.pyc", "*.pyo",
+		"*.exe", "*.dll", "*.obj", "*.o", "*.a", "*.lib", "*.so",
+		"*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb",
+		".DS_Store", ".directory", "desktop.ini",
+		"*.class", "*.psd", "*.db",
+		"*.sublime-workspace",
+		"*.aux", "*.auxlock", "*.fmt", "*.bcf", "*.nav", "*.run.xml", "*.snm", "*.out", "*.lol", "*.lof", "*.lot", "*.synctex*", "*.gz", "*.tdo", "*.toc",
+		"*.xlsx", "*.xlsm"
+	],
+	"index_files": false,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "<",
+			"selector": "text.html, text.xml",
+		},
+		{
+			"rhs_empty": true,
+			"selector": "punctuation.accessor",
+		},
+		{
+			"characters": "\\",
+			"selector": "text.tex.latex",
+		}
+	],
+}

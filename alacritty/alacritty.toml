@@ -1,0 +1,10 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/theme.toml"
+]
+
+live_config_reload = true
+
+
+[terminal]
+shell = "/usr/bin/zsh"

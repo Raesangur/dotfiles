@@ -1,0 +1,8 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "Ctrl-D": "DuplicateLine",
+    "Ctrl-E": "DeleteLine",
+    "Ctrl-W": "CommandMode",
+    "CtrlUnderscore": "lua:comment.comment",
+    "OldBackspace": "DeleteWordLeft"
+}
