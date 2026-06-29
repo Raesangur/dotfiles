@@ -1,10 +1,11 @@
 {
 	"draw_white_space": "all",
-	"font_size": 9,
+	"font_size": 14,
 	"theme": "Default Dark.sublime-theme",
 	"color_scheme": "Packages/Color Scheme - Default/Raesangur.sublime-color-scheme",
 	"ignored_packages":
 	[
+		"Package Control",
 		"Vintage",
 	],
 	"translate_tabs_to_spaces": true,

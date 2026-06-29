@@ -15,6 +15,7 @@
     ],
     "modules-right": [
         "mpd",
+        "custom/kdeconnect",
         //"idle_inhibitor",
         "bluetooth",
         "pulseaudio",
@@ -28,6 +29,7 @@
         // "sway/language",
         // "battery",
         // "battery#bat2",
+        "custom/weather",
         "clock",
         "tray",
         "custom/power"
@@ -82,6 +84,12 @@
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "custom/kdeconnect": {
+      "exec": "$HOME/.config/waybar/custom-kdeconnect.sh battery",
+      "format": " {}",
+      "interval": 60,
+      "on-click": "$HOME/.config/waybar/custom-kdeconnect.sh ring"
     },
     "tray": {
         // "icon-size": 21,
@@ -160,6 +168,14 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/weather/get_weather.rb",
+        "on-click": "$HOME/.config/waybar/scripts/weather/get_weather.rb --next", // Cycle views
+        "interval": 900 // Every 15 minutes
     },
     "custom/power": {
         "format" : "⏻ ",
