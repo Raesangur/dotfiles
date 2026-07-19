@@ -95,7 +95,7 @@ prompt_context() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue $CURRENT_FG '%~'
+  prompt_segment '#00AAAA' $CURRENT_FG '%~'
 }
 
 
