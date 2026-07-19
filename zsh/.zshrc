@@ -31,9 +31,7 @@ export DISPLAY=:0
 PATH=${PATH}:~/.local/bin:~/scripts
 PATH=${PATH}:~/.cargo/bin
 export PATH
-
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/mnt/f/llama/lib
-
 
 # Make history longer
 export HISTFILE="$HOME/.zsh_history"
@@ -68,3 +66,7 @@ fi
 # Display welcome message on shell startup
 ~/dotfiles/zsh/welcome.sh
 #source ~/dotfiles/zsh/updates
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

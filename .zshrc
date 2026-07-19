@@ -17,21 +17,20 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # zsh plugins
 plugins=(
-# plugins softwares
-docker
-git
-mvn
-node
-npm
-python
+    # plugins softwares
+    docker
+    git
+    mvn
+    node
+    npm
+    python
 
+    # plugins tools
+    emoji
+    web-search
 
-# plugins tools
-emoji
-web-search
-
-# plugins misc
-sudo
+    # plugins misc
+    sudo
 )
 
 # Apply zsh config

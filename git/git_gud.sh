@@ -4,7 +4,7 @@
 # (I'm sure killing the agent is never going to bite me in the ass in the future...)
 SSH_AGENT_PID=$(pidof ssh-agent) ssh-agent -k
 eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/ed25519
+ssh-add ~/.ssh/id_ed25519
 
 # Add all files
 git add -A

@@ -22,6 +22,10 @@ if command -v snap &> /dev/null ; then
     sudo snap refresh
 fi
 
+if command -v flatpak &> /dev/null ; then
+    flatpak update
+fi
+
 if command -v brew &> /dev/null ; then
     brew upgrade
 fi
@@ -32,4 +36,8 @@ fi
 
 if command -v pveam &> /dev/null ; then
     pveam update
+fi
+
+if command -v dnf &> /dev/null ; then
+    sudo dnf update
 fi
