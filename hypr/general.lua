@@ -145,6 +145,24 @@ hl.config({
     xwayland = {
         force_zero_scaling = true,
     },
+    input = {
+        kb_layout = "ca",
+        kb_variant = "multix",
+        --kb_variant = coolmak
+        kb_model = "",
+        kb_options = "",
+        kb_rules = "",
+        follow_mouse = 2,
+        sensitivity = 0,
+        accel_profile = "flat",
+        --force_no_accel = true
+        repeat_rate = 30,
+        repeat_delay = 300, --150
+        touchpad = {
+            natural_scroll = false,
+        },
+        numlock_by_default = true,
+    },
     -- https://wiki.hyprland.org/Configuring/Variables/#decoration0
     decoration = {
         rounding = 5,

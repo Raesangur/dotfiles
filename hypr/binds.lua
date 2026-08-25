@@ -8,14 +8,14 @@
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("$terminal"))
+hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exit())
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("$fileManager"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + P", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("$menu"))
-hl.bind(mainMod .. " + $mainMod_L", hl.dsp.exec_cmd("pkill rofi || $menu"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+-- hl.bind(mainMod .. " + $mainMod_L", hl.dsp.exec_cmd("pkill rofi ||" .. + menu))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("rofi -show calc -modi calc -no-show-match -no-sort"))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker --notify --autocopy"))
@@ -98,7 +98,7 @@ hl.bind("SHIFT + CTRL + down", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_S
 
 -- Screenshots with hyprshot
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m window -m active"))
-hl.bind(shiftMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
 
 -- Reload applications
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("pkill waybar ; hyprctl dispatch exec waybar"))
