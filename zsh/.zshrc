@@ -28,8 +28,10 @@ export PATH=/usr/lib/ccache:$PATH
 
 export DISPLAY=:0
 
+
 PATH=${PATH}:~/.local/bin:~/scripts
 PATH=${PATH}:~/.cargo/bin
+PATH=${PATH}:~/go/bin
 export PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/mnt/f/llama/lib
 
@@ -70,3 +72,8 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$PATH:/home/raesangur/.local/bin"
+
+fpath=(/home/raesangur/.local/share/zsh/site-functions $fpath)
+autoload -Uz compinit && compinit

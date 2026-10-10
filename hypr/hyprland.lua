@@ -174,41 +174,35 @@ hl.window_rule({
 })
 
 hl.workspace_rule({
-   workspace = "1",
-    default_name = "terminal",
+    workspace = "1",
     monitor = "DP-1",
     default = true,
 })
 
 hl.workspace_rule({
     workspace = "2",
-    default_name = "browser",
     monitor = "DVI-D-1",
     default = true,
 })
 
 hl.workspace_rule({
     workspace = "7",
-    default_name = "mail",
     monitor = "HDMI-A-1",
 })
 
 hl.workspace_rule({
     workspace = "8",
-    default_name = "steam",
     monitor = "HDMI-A-1",
 })
 
 hl.workspace_rule({
     workspace = "9",
-    default_name = "social",
     monitor = "HDMI-A-1",
     default = true,
 })
 
 hl.workspace_rule({
     workspace = "10",
-    default_name = "games",
     monitor = "DP-1",
     no_border = true,
     no_rounding = true,
@@ -232,7 +226,7 @@ hl.window_rule({
 hl.on("hyprland.start", function()
     hl.exec_cmd("hyprlock --immediate")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
-    hl.exec_cmd("hyprctl dispatch exec waybar")
+    hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper --config ~/.config/hypr/hyprpaper.conf")
     hl.exec_cmd("wl-paste --type text  --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
@@ -249,3 +243,23 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprctl dispatch exec [workspace 8 silent] `steam -cef-disable-gpu`")
 end)
 
+hl.monitor({
+    output = "DP-1",
+    mode = "2560x1440@144",
+    position = "0x0",
+    scale = "1",
+})
+
+hl.monitor({
+    output = "DP-2",
+    mode = "1920x1080@60",
+    position = "2560x300",
+    scale = "1",
+})
+
+hl.monitor({
+    output = "HDMI-A-1",
+    mode = "1680x1050",
+    position = "2560x-750",
+    scale = "1",
+})
